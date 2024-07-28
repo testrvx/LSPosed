@@ -113,8 +113,8 @@ subprojects {
     }
     plugins.withType(JavaPlugin::class.java) {
         extensions.configure(JavaPluginExtension::class.java) {
-            sourceCompatibility = androidSourceCompatibility
-            targetCompatibility = androidTargetCompatibility
+            sourceCompatibility = 11
+            targetCompatibility = 11
         }
     }
 }
