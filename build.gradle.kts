@@ -56,8 +56,8 @@ val androidMinSdkVersion by extra(27)
 val androidBuildToolsVersion by extra("32.0.0")
 val androidCompileSdkVersion by extra(33)
 val androidCompileNdkVersion by extra("25.1.8937393")
-val androidSourceCompatibility by extra(JavaVersion.VERSION_21)
-val androidTargetCompatibility by extra(JavaVersion.VERSION_21)
+val androidSourceCompatibility by extra(JavaVersion.VERSION_17)
+val androidTargetCompatibility by extra(JavaVersion.VERSION_17)
 
 tasks.register("Delete", Delete::class) {
     delete(rootProject.buildDir)
@@ -95,7 +95,7 @@ fun Project.configureBaseExtension() {
                 cmake {
                     arguments += "-DEXTERNAL_ROOT=${File(rootDir.absolutePath, "external")}"
                     arguments += "-DCORE_ROOT=${File(rootDir.absolutePath, "core/src/main/jni")}"
-                    abiFilters("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+                    abiFilters("arm64-v8a", "armeabi-v7a")
                     val flags = arrayOf(
                         "-Wall",
                         "-Qunused-arguments",
