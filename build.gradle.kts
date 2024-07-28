@@ -45,7 +45,7 @@ cmaker {
         )
         cFlags.addAll(flags)
         cppFlags.addAll(flags)
-        abiFilters("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
+        abiFilters("arm64-v8a", "armeabi-v7a")
     }
     buildTypes {
         if (it.name == "release") {
@@ -71,8 +71,8 @@ val androidMinSdkVersion by extra(27)
 val androidBuildToolsVersion by extra("34.0.0")
 val androidCompileSdkVersion by extra(34)
 val androidCompileNdkVersion by extra("26.1.10909125")
-val androidSourceCompatibility by extra(JavaVersion.VERSION_21)
-val androidTargetCompatibility by extra(JavaVersion.VERSION_21)
+val androidSourceCompatibility by extra(JavaVersion.VERSION_11)
+val androidTargetCompatibility by extra(JavaVersion.VERSION_11)
 
 tasks.register("Delete", Delete::class) {
     delete(rootProject.layout.buildDirectory)
