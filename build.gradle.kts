@@ -84,6 +84,12 @@ kotlin {
     }
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // specify the desired Java version
+    }
+}
+
 subprojects {
     plugins.withType(AndroidBasePlugin::class.java) {
         extensions.configure(CommonExtension::class.java) {
