@@ -122,11 +122,6 @@ int main(int argc, char **argv) {
     }
     LOGD("sock: %s %d", sock.sun_path + 1, stock_fd);
 
-    const char *new_argv[argc + 2];
-    for (int i = 0; i < argc; i++) new_argv[i] = argv[i];
-    new_argv[argc] = "--inline-max-code-units=0";
-    new_argv[argc + 1] = NULL;
-
     if (getenv("LD_LIBRARY_PATH") == NULL) {
         char const *libenv = LP_SELECT(
             "LD_LIBRARY_PATH=/apex/com.android.art/lib:/apex/com.android.os.statsd/lib",
