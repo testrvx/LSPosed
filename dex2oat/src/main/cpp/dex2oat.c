@@ -136,7 +136,7 @@ int main(int argc, char **argv) {
     putenv(env_str);
     LOGD("Set env %s", env_str);
 
-    fexecve(stock_fd, (char **)new_argv, environ);
+    fexecve(stock_fd, argv, environ);
 
     PLOGE("fexecve failed");
     return 2;
